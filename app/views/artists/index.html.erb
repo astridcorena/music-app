@@ -1,0 +1,12 @@
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Imagen</th>
+  </tr>
+  <% @artists.each do |artist| %>
+  <tr>
+      <td><%= link_to artist.name, artist_path(artist) %></td>
+      <td><img src="<%= artist.image_url %>" alt="<%= artist.name %>" width="200"></td>
+  <% end %>
+  </tr>
+</table>

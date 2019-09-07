@@ -1,0 +1,13 @@
+<h1><%= @artist.name %></h1>
+<%= link_to 'Regresar', artists_path() %>
+<br>
+<h1>Álbumes</h1>
+<% if @artist.albums.count == 0 %>
+  <h1>No tiene álbumes creados</h1>
+<% else %>
+  <% @artist.albums.each do |album| %>
+  <h2><%= album.name %></h2>
+  <h3><%= album.released_at  %></h3>
+  <img src="<%= album.image_url %>" alt="<%= album.name %>" width="200">
+  <% end %>
+<% end %>
